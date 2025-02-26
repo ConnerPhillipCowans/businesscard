@@ -6,12 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -37,18 +39,32 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCardContent(modifier: Modifier = Modifier) {
     Box(
-        modifier = modifier
-            .fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
-
         Image(
-            painter = painterResource(R.drawable.img_1672_2),
+            painter = painterResource(R.drawable.img_1672),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxSize()
                 .alpha(0.99f),
             contentScale = ContentScale.Crop
         )
+
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(R.drawable.img_0795),
+                contentDescription = "Profile Picture",
+                modifier = Modifier
+                    .size(300.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
+            )
+        }
 
 
         Column(
@@ -64,7 +80,6 @@ fun BusinessCardContent(modifier: Modifier = Modifier) {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
