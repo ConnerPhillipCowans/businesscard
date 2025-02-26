@@ -46,7 +46,7 @@ fun BusinessCardContent(modifier: Modifier = Modifier) {
             contentDescription = null,
             modifier = Modifier
                 .fillMaxSize()
-                .alpha(0.90f),
+                .alpha(0.95f),
             contentScale = ContentScale.Crop
         )
 
