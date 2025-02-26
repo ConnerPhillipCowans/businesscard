@@ -65,6 +65,7 @@ fun BusinessCardContent(modifier: Modifier = Modifier) {
     }
 }
 
+
 @Preview(showBackground = true)
 @Composable
 fun BusinessCardPreview() {
